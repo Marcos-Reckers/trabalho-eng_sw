@@ -1,0 +1,238 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e0e0e0;
+    margin: 0;
+    padding: 0;
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.logo {
+    width: 50px;
+    height: auto;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-top: 10px;
+}
+
+.login-box {
+    background-color: #d3d3d3;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+.login-box form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-box input {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.login-box button {
+    padding: 10px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.google-login button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;/* Estilos gerais */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #e0e0e0;
+    }
+    
+    .container {
+        display: grid;
+        grid-template-areas:
+            "header header"
+            "nav nav"
+            "sidebar main"
+            "sidebar message";
+        grid-template-rows: auto auto 1fr auto;
+        grid-template-columns: 200px 1fr;
+        height: 100vh;
+    }
+    
+    /* Cabeçalho */
+    header {
+        grid-area: header;
+        background-color: #f4f4f4;
+        padding: 10px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 2px solid #333;
+    }
+    
+    header .logo {
+        width: 50px;
+        height: auto;
+    }
+    
+    header h1 {
+        font-size: 1.5rem;
+        margin: 0;
+    }
+    
+    header .login-btn {
+        font-size: 1rem;
+        background-color: #ccc;
+        padding: 10px;
+        border-radius: 5px;
+        text-decoration: none;
+        color: black;
+    }
+    
+    /* Menu Superior */
+    .top-nav {
+        grid-area: nav;
+        background-color: #f4f4f4;
+        padding: 5px 20px;
+        border-bottom: 2px solid #333;
+    }
+    
+    .top-nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: space-around;
+    }
+    
+    .top-nav ul li a {
+        text-decoration: none;
+        color: black;
+        padding: 10px 20px;
+        display: block;
+        background-color: #ddd;
+        border-radius: 5px;
+    }
+    
+    /* Menu Lateral */
+    .sidebar {
+        grid-area: sidebar;
+        background-color: #f4f4f4;
+        padding: 10px;
+        overflow-y: auto;
+        border-right: 2px solid #333;
+    }
+    
+    .sidebar ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .sidebar ul li a {
+        text-decoration: none;
+        color: black;
+        padding: 10px;
+        display: block;
+        background-color: #ddd;
+        margin-bottom: 5px;
+        border-radius: 5px;
+    }
+    
+    /* Conteúdo Principal */
+    main {
+        grid-area: main;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .recent, .news {
+        background-color: #f4f4f4;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        position: relative;
+    }
+    
+    .recent h2, .news h2 {
+        margin-top: 0;
+        background-color: #cccccc;
+        padding: 10px;
+        border-radius: 5px;
+        text-align: center;
+        position: absolute;
+        top: -20px;
+        left: 20px;
+    }
+    
+    .recent-content, .news-content {
+        padding: 20px;
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 10px;
+    }
+    
+    /* Barra de mensagem */
+    .message-bar {
+        grid-area: message;
+        background-color: #f4f4f4;
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        border-top: 2px solid #333;
+    }
+    
+    .message-bar input {
+        flex-grow: 1;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        margin-right: 10px;
+    }
+    
+    .message-bar button {
+        background-color: #ccc;
+        padding: 10px;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+    }
+    
+    font-size: 1rem;
+}
+
+.google-login img {
+    width: 20px;
+    height: auto;
+    margin-right: 10px;
+}

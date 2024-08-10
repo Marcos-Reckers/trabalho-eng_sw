@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A.C.E - Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+</head>
+<body>
+    <div class="container">
+        <!-- Cabeçalho -->
+        <header>
+            <img src="{{ url_for('static', filename='img/spade.png') }}" alt="Logo" class="logo">
+            <h1>A.C.E - Acervo Comunitário Estudantil</h1>
+            <a href="#" class="login-btn">LOGIN / REGISTER</a>
+        </header>
+        
+        <!-- Menu Superior -->
+        <nav class="top-nav">
+            <ul>
+                <li><a href="#">CIC</a></li>
+                <li><a href="#">ECP</a></li>
+                <li><a href="{{ url_for('home') }}">HOME</a></li>
+                <li><a href="#">FÓRUM</a></li>
+                <li><a href="#">...</a></li>
+                <li><a href="{{ url_for('avaliacao_professores') }}">AVALIAÇÃO DE PROFESSORES</a></li>
+            </ul>
+        </nav>
+
+        <!-- Menu Lateral -->
+        <aside class="sidebar">
+            <ul>
+                <li><a href="#">Etapa 1</a></li>
+                <li><a href="#">Etapa 2</a></li>
+                <li><a href="#">Etapa 3</a></li>
+                <li><a href="#">Etapa 4</a></li>
+                <li><a href="#">Etapa 5</a></li>
+                <li><a href="#">Etapa 6</a></li>
+                <li><a href="#">Etapa 7</a></li>
+                <li><a href="#">Etapa 8</a></li>
+                <li><a href="#">Sem etapa</a></li>
+            </ul>
+        </aside>
+
+        <!-- Conteúdo Principal -->
+        <main>
+            <section class="recent">
+                <h2>ADICIONADOS RECENTEMENTE</h2>
+                <div class="recent-content">
+                    <p>Conteúdos recentes adicionados ao material disponível no site.</p>
+                </div>
+            </section>
+            <section class="news">
+                <h2>NOTÍCIAS</h2>
+                <div class="news-content">
+                    <p>Acompanhe as últimas notícias da UFRGS.</p>
+                </div>
+            </section>
+        </main>
+
+        <!-- Barra de mensagem -->
+        <div class="message-bar">
+            <input type="text" placeholder="Send message...">
+            <button type="button">&#9650;</button>
+        </div>
+    </div>
+</body>
+</html>

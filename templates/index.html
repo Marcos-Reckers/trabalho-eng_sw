@@ -1,17 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>A.C.E - Acervo Comunitário Estudantil</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
 </head>
 <body>
-    <h1>Bem-vindo à Página Inicial</h1>
-    <nav>
-        <a href="/">Home</a>
-        <a href="/login">login</a>
-        <a href="/avaliacao_professores">Avaliação de Professores</a>
+    <header>
+        <div class="header-container">
+            <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" class="logo">
+            <h1>A.C.E - Acervo Comunitário Estudantil</h1>
+            <a href="#" class="login-register">LOGIN / REGISTER</a>
+        </div>
+    </header>
+    <nav class="top-nav">
+        <ul>
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">FÓRUM</a></li>
+            <li><a href="#">...</a></li>
+            <li><a href="#">AVALIAÇÃO DE PROFESSORES</a></li>
+        </ul>
     </nav>
+    <div class="content-container">
+        <aside class="side-nav">
+            <ul>
+                <li><a href="#">CIC</a></li>
+                <li><a href="#">ECP</a></li>
+                <li><a href="#">Etapa 1</a></li>
+                <li><a href="#">Etapa 2</a></li>
+                <li><a href="#">Etapa 3</a></li>
+                <li><a href="#">Etapa 4</a></li>
+                <li><a href="#">Etapa 5</a></li>
+                <li><a href="#">Etapa 6</a></li>
+                <li><a href="#">Etapa 7</a></li>
+                <li><a href="#">Etapa 8</a></li>
+                <li><a href="#">Sem etapa</a></li>
+            </ul>
+        </aside>
+        <main class="main-content">
+            <section class="recently-added">
+                <h2>ADICIONADOS RECENTEMENTE</h2>
+                <p>Conteúdos recentes adicionados ao material disponível no site.</p>
+            </section>
+            <section class="news">
+                <h2>NOTÍCIAS</h2>
+                <p>Acompanhe as últimas notícias da UFRGS.</p>
+            </section>
+        </main>
+    </div>
+    <footer>
+        <div class="footer-container">
+            <form action="#" method="POST">
+                <input type="text" placeholder="Send message..." name="message">
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </footer>
 </body>
 </html>
