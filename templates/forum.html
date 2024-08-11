@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A.C.E - Acervo Comunitário Estudantil</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/forum.css') }}">
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <div class="logo-title">
+                <img src="{{ url_for('static', filename='img/spade.png') }}" alt="Spade Symbol">
+                <h1>A.C.E - Acervo Comunitário Estudantil</h1>
+            </div>
+            <div class="login-register">
+                <button onclick="window.location.href='{{ url_for('static', filename='login.html') }}'">LOGIN/REGISTER</button>
+            </div>
+        </div>
+        <div class="nav-bar">
+            <div class="toggle-buttons">
+                <button onclick="window.location.href='{{ url_for('toggle', curso='CIC') }}'" class="{{ 'selected' if selected == 'CIC' else '' }}">CIC</button>
+                <button onclick="window.location.href='{{ url_for('toggle', curso='ECP') }}'" class="{{ 'selected' if selected == 'ECP' else '' }}">ECP</button>
+            </div>
+            <div class="nav-buttons">
+                <button onclick="window.location.href='#'">HOME</button>
+                <button onclick="window.location.href='#forum'">FORUM</button>
+                <button onclick="window.location.href='#'">...</button>
+                <button onclick="window.location.href='#'">AVALIAÇÃO DE PROFESSORES</button>
+            </div>
+        </div>
+    </header>
+    
+    <aside>
+        <ul>
+            <li>Etapa 1
+                <ul>
+                    {% for disciplina in etapa_disciplinas %}
+                        <li>{{ disciplina }}</li>
+                    {% endfor %}
+                </ul>
+            </li>
+            <li>Etapa 2
+            </li>
+            <li>Etapa 3
+            </li>
+            <li>Etapa 4
+            </li>
+            <li>Etapa 5
+            </li>
+            <li>Etapa 6
+            </li>
+            <li>Etapa 7
+            </li>
+            <li>Etapa 8
+            </li>
+            <li>Sem Etapa
+            </li>
+            <!-- Replicar o mesmo para outras etapas -->
+        </ul>
+    </aside>
+    
+    <main>
+        <div id="forum">
+            <form method="GET" action="/forum/search">
+                <input type="text" id="search" name="search" placeholder="Buscar...">
+                <button type="submit">FILTRAR</button>
+            </form>
+            <div class="topic">
+                <h3>A prova de eng de software é muito difícil??</h3>
+                <!-- Comentários do tópico -->
+            </div>
+            <div class="topic">
+                <h3>Alguém tem a lista de exercícios de Cálculo 1?</h3>
+                <!-- Comentários do tópico -->
+            </div>
+            <div class="topic">
+                <h3>Melhores práticas para estudar Matemática Discreta?</h3>
+                <!-- Comentários do tópico -->
+            </div>
+            <div class="topic">
+                <h3>Qual é a melhor maneira de se preparar para a prova de Algoritmos?</h3>
+                <!-- Comentários do tópico -->
+            </div>
+            <div class="topic">
+                <h3>Dicas para o trabalho final de ARQ0</h3>
+                <!-- Comentários do tópico -->
+            </div>
+        </div>
+
+        <form action="/forum" method="POST" class="fixed-form">
+            <label for="titulo">Título:</label>
+            <input type="text" id="titulo" name="titulo" placeholder="Digite o título do tópico..."><br>
+
+            <label for="texto">Texto:</label>
+            <textarea id="texto" name="texto" placeholder="Digite seu texto..."></textarea><br>
+
+            <button type="submit">Submit</button>
+        </form>
+    </main>
+</body>
+</html>
