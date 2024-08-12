@@ -1,68 +1,375 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A.C.E - Home</title>
+    <title>A.C.E - Acervo Comunitário Estudantil</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
 </head>
 <body>
-    <div class="container">
-        <!-- Cabeçalho -->
-        <header>
-            <img src="{{ url_for('static', filename='img/spade.png') }}" alt="Logo" class="logo">
-            <h1>A.C.E - Acervo Comunitário Estudantil</h1>
-            <a href="#" class="login-btn">LOGIN / REGISTER</a>
-        </header>
-        
-        <!-- Menu Superior -->
-        <nav class="top-nav">
-            <ul>
-                <li><a href="#">CIC</a></li>
-                <li><a href="#">ECP</a></li>
-                <li><a href="{{ url_for('home') }}">HOME</a></li>
-                <li><a href="#">FÓRUM</a></li>
-                <li><a href="#">...</a></li>
-                <li><a href="{{ url_for('avaliacao_professores') }}">AVALIAÇÃO DE PROFESSORES</a></li>
-            </ul>
-        </nav>
-
-        <!-- Menu Lateral -->
-        <aside class="sidebar">
-            <ul>
-                <li><a href="#">Etapa 1</a></li>
-                <li><a href="#">Etapa 2</a></li>
-                <li><a href="#">Etapa 3</a></li>
-                <li><a href="#">Etapa 4</a></li>
-                <li><a href="#">Etapa 5</a></li>
-                <li><a href="#">Etapa 6</a></li>
-                <li><a href="#">Etapa 7</a></li>
-                <li><a href="#">Etapa 8</a></li>
-                <li><a href="#">Sem etapa</a></li>
-            </ul>
-        </aside>
-
-        <!-- Conteúdo Principal -->
-        <main>
-            <section class="recent">
-                <h2>ADICIONADOS RECENTEMENTE</h2>
-                <div class="recent-content">
-                    <p>Conteúdos recentes adicionados ao material disponível no site.</p>
-                </div>
-            </section>
-            <section class="news">
-                <h2>NOTÍCIAS</h2>
-                <div class="news-content">
-                    <p>Acompanhe as últimas notícias da UFRGS.</p>
-                </div>
-            </section>
-        </main>
-
-        <!-- Barra de mensagem -->
-        <div class="message-bar">
-            <input type="text" placeholder="Send message...">
-            <button type="button">&#9650;</button>
+    <header>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='img/logo.svg') }}" alt="Logo A.C.E">
         </div>
+        <h1>A.C.E - Acervo Comunitário Estudantil</h1>
+        <div class="login">
+            <button>Login / Register</button>
+        </div>
+    </header>
+    
+    <div class="page-container">
+        <!-- Coluna da Esquerda: Seletor de curso e Etapas -->
+        <aside class="coluna-esquerda">
+            <div class="submenu-selector">
+                <button class="submenu-btn active" data-target="cic">CIC</button>
+                <button class="submenu-btn" data-target="ecp">ECP</button>
+            </div>
+            
+            <!-- Submenu CIC -->
+            <div class="submenu-content" id="cic">
+                <ul>
+                    <li>
+                        <button class="collapsible">Etapa 1</button>
+                        <div class="content">
+                            <ul>
+                                <li><a href="#">INF01202 - ALGORÍTMOS E PROGRAMAÇÃO - CIC (Obrigatória)</a></li>
+                                <li><a href="#">MAT01353 - CÁLCULO E GEOMETRIA ANALÍTICA I - A (Obrigatória)</a></li>
+                                <li><a href="#">INF05008 - FUNDAMENTOS DE ALGORITMOS (Obrigatória)</a></li>
+                                <li><a href="#">INF01107 - INTRODUÇÃO À ARQUITETURA DE COMPUTADORES (Obrigatória)</a></li>
+                                <li><a href="#">MAT01375 - MATEMÁTICA DISCRETA B (Obrigatória)</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <button class="collapsible">Etapa 2</button>
+                        <div class="content">
+                            <ul>
+                                <li><a href="#">MAT01355 - ÁLGEBRA LINEAR I - A (Obrigatória)</a></li>
+                                <li><a href="#">INF01108 - ARQUITETURA E ORGANIZAÇÃO DE COMPUTADORES I (Obrigatória)</a></li>
+                                <li><a href="#">MAT01354 - CÁLCULO E GEOMETRIA ANALÍTICA II - A (Obrigatória)</a></li>
+                                <li><a href="#">INF01203 - ESTRUTURAS DE DADOS (Obrigatória)</a></li>
+                                <li><a href="#">INF05508 - LÓGICA PARA COMPUTAÇÃO (Obrigatória)</a></li>
+                                <li><a href="#">INF05512 - TEORIA DOS GRAFOS E ANÁLISE COMBINATÓRIA (Obrigatória)</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <button class="collapsible">Etapa 3</button>
+                        <div class="content">
+                            <ul>
+                                <li><a href="#">INF01112 - ARQUITETURA E ORGANIZAÇÃO DE COMPUTADORES II (Obrigatória)</a></li>
+                                <li><a href="#">INF01058 - CIRCUITOS DIGITAIS (Obrigatória)</a></li>
+                                <li><a href="#">INF01124 - CLASSIFICAÇÃO E PESQUISA DE DADOS (Obrigatória)</a></li>
+                                <li><a href="#">INF05005 - LINGUAGENS FORMAIS E AUTÔMATOS N (Obrigatória)</a></li>
+                                <li><a href="#">MAT02219 - PROBABILIDADE E ESTATÍSTICA (Obrigatória)</a></li>
+                                <li><a href="#">INF05501 - TEORIA DA COMPUTAÇÃO N (Obrigatória)</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                        <button class="collapsible">Etapa 4</button>
+                        <div class="content">
+                            <ul>
+                                <li><a href="#">MAT01032 - CÁLCULO NUMÉRICO A (Obrigatória)</a></li>
+                                <li><a href="#">INF05515 - COMPLEXIDADE DE ALGORITMOS - B (Obrigatória)</a></li>
+                                <li><a href="#">INF01145 - FUNDAMENTOS DE BANCO DE DADOS (Obrigatória)</a></li>
+                                <li><a href="#">INF01046 - FUNDAMENTOS DE PROCESSAMENTO DE IMAGENS (Obrigatória)</a></li>
+                                <li><a href="#">INF01113 - ORGANIZAÇÃO DE COMPUTADORES B (Obrigatória)</a></li>
+                                <li><a href="#">INF01120 - TÉCNICAS DE CONSTRUÇÃO DE PROGRAMAS (Obrigatória)</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    </li>
+                        <button class="collapsible">Etapa 5</button>
+                        <div class="content">
+                            <ul>
+                                <li><a href="#">INF01127 - ENGENHARIA DE SOFTWARE N (Obrigatória)</a></li>
+                                <li><a href="#">INF01047 - FUNDAMENTOS DE COMPUTAÇÃO GRÁFICA (Obrigatória)</a></li>
+                                <li><a href="#">INF01048 - INTELIGÊNCIA ARTIFICIAL (Obrigatória)</a></li>
+                                <li><a href="#">INF05010 - OTIMIZAÇÃO COMBINATÓRIA (Obrigatória)</a></li>
+                                <li><a href="#">INF05516 - SEMÂNTICA FORMAL N (Obrigatória)</a></li>
+                                <li><a href="#">INF01142 - SISTEMAS OPERACIONAIS I N (Obrigatória)</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    </li>
+                        <button class="collapsible">Etapa 6</button>
+                        <div class="content">
+                            <ul>
+                                <li><a href="#">INF01147 - COMPILADORES (Obrigatória)</a></li>
+                                <li><a href="#">INF01209 - FUNDAMENTOS DE TOLERÂNCIA A FALHAS (Obrigatória)</a></li>
+                                <li><a href="#">INF01043 - INTERAÇÃO HOMEM-COMPUTADOR (Obrigatória)</a></li>
+                                <li><a href="#">INF01121 - MODELOS DE LINGUAGEM DE PROGRAMAÇÃO (Obrigatória)</a></li>
+                                <li><a href="#">INF01154 - REDES DE COMPUTADORES N (Obrigatória)</a></li>
+                                <li><a href="#">INF01151 - SISTEMAS OPERACIONAIS II N (Obrigatória)</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    </li>
+                        <button class="collapsible">Etapa 7</button>
+                        <div class="content">
+                            <ul>
+                                <li><a href="#">INF01032 - EMPREENDIMENTO EM INFORMÁTICA (Alternativa)</a></li>
+                                <li><a href="#">QUI99009 - INTRODUÇÃO AO EMPREENDEDORISMO E INOVAÇÃO (Alternativa)</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    </li>
+                        <button class="collapsible">Sem Etapa</button>
+                        <div class="content">
+                            <ul>
+                                <li><a href="#">INF05019 - AGENTES AUTÔNOMOS E SISTEMAS MULTIAGENTES (Eletiva)</a></li>
+                                <li><a href="#">INF01017 - APRENDIZADO DE MÁQUINA (Eletiva)</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Submenu ECP -->
+            <div class="submenu-content" id="ecp">
+                <ul>
+                    <!-- Etapa 1 -->
+                    <li>
+                        <button class="collapsible">Etapa 1</button>
+                        <div class="content">
+                            <ul>
+                                <li><a href="#">INF01202 - ALGORÍTMOS E PROGRAMAÇÃO - CIC (Obrigatória)</a></li>
+                                <li><a href="#">MAT01353 - CÁLCULO E GEOMETRIA ANALÍTICA I - A (Obrigatória)</a></li>
+                                <li><a href="#">FIS01181 - FÍSICA I-C (Obrigatória)</a></li>
+                                <li><a href="#">INF01107 - INTRODUÇÃO À ARQUITETURA DE COMPUTADORES (Obrigatória)</a></li>
+                                <li><a href="#">ENG10031 - INTRODUÇÃO À ENGENHARIA DE COMPUTAÇÃO (Obrigatória)</a></li>
+                                <li><a href="#">MAT01375 - MATEMÁTICA DISCRETA B (Obrigatória)</a></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <!-- Etapa 2 -->
+                    <li>
+                        <button class="collapsible">Etapa 2</button>
+                        <div class="content">
+                            <ul>
+                                <li><a href="#">MAT01355 - ÁLGEBRA LINEAR I - A (Obrigatória)</a></li>
+                                <li><a href="#">INF01108 - ARQUITETURA E ORGANIZAÇÃO DE COMPUTADORES I (Obrigatória)</a></li>
+                                <li><a href="#">MAT01354 - CÁLCULO E GEOMETRIA ANALÍTICA II - A (Obrigatória)</a></li>
+                                <li><a href="#">INF01203 - ESTRUTURAS DE DADOS (Obrigatória)</a></li>
+                                <li><a href="#">FIS01182 - FÍSICA GERAL - ELETROMAGNETISMO (Obrigatória)</a></li>
+                                <li><a href="#">INF05508 - LÓGICA PARA COMPUTAÇÃO (Obrigatória)</a></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <!-- Etapa 3 -->
+                    <li>
+                        <button class="collapsible">Etapa 3</button>
+                        <div class="content">
+                            <ul>
+                                <li><a href="#">INF01112 - ARQUITETURA E ORGANIZAÇÃO DE COMPUTADORES II (Obrigatória)</a></li>
+                                <li><a href="#">INF01058 - CIRCUITOS DIGITAIS (Obrigatória)</a></li>
+                                <li><a href="#">INF01124 - CLASSIFICAÇÃO E PESQUISA DE DADOS (Obrigatória)</a></li>
+                                <li><a href="#">MAT01167 - EQUAÇÕES DIFERENCIAIS II (Obrigatória)</a></li>
+                                <li><a href="#">FIS01183 - FÍSICA III-C (Obrigatória)</a></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <!-- Etapa 4 -->
+                    <li>
+                        <button class="collapsible">Etapa 4</button>
+                        <div class="content">
+                            <ul>
+                                <li><a href="#">ENG10001 - CIRCUITOS ELÉTRICOS I - C (Obrigatória)</a></li>
+                                <li><a href="#">MAT01168 - MATEMÁTICA APLICADA II (Obrigatória)</a></li>
+                                <li><a href="#">INF01120 - TÉCNICAS DE CONSTRUÇÃO DE PROGRAMAS (Obrigatória)</a></li>
+                                <li><a href="#">INF05501 - TEORIA DA COMPUTAÇÃO N (Obrigatória)</a></li>
+                                <li><a href="#">MAT02219 - PROBABILIDADE E ESTATÍSTICA (Alternativa)</a></li>
+                                <li><a href="#">MAT02050 - PROBABILIDADE E ESTATÍSTICA - EAD (Alternativa)</a></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <!-- Etapa 5 -->
+                    <li>
+                        <button class="collapsible">Etapa 5</button>
+                        <div class="content">
+                            <ul>
+                                <li><a href="#">INF01146 - AVALIAÇÃO DE DESEMPENHO (Eletiva)</a></li>
+                                <li><a href="#">ENG10002 - CIRCUITOS ELÉTRICOS II - C (Obrigatória)</a></li>
+                                <li><a href="#">INF01127 - ENGENHARIA DE SOFTWARE N (Obrigatória)</a></li>
+                                <li><a href="#">INF01049 - INTRODUÇÃO À PESQUISA EM INFORMÁTICA (Eletiva)</a></li>
+                                <li><a href="#">INF01175 - SISTEMAS DIGITAIS PARA COMPUTADORES A (Obrigatória)</a></li>
+                                <li><a href="#">INF01142 - SISTEMAS OPERACIONAIS I N (Obrigatória)</a></li>
+                                <li><a href="#">ENG04010 - TEORIA ELETROMAGNÉTICA E ONDAS (Obrigatória)</a></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <!-- Etapa 6 -->
+                    <li>
+                        <button class="collapsible">Etapa 6</button>
+                        <div class="content">
+                            <ul>
+                                <li><a href="#">INF01185 - CONCEPÇÃO DE CIRCUITOS INTEGRADOS I (Obrigatória)</a></li>
+                                <li><a href="#">ENG10044 - ELETRÔNICA FUNDAMENTAL I - B (Obrigatória)</a></li>
+                                <li><a href="#">INF01048 - INTELIGÊNCIA ARTIFICIAL (Eletiva)</a></li>
+                                <li><a href="#">ENG10003 - LABORATÓRIO DE CIRCUITOS ELÉTRICOS (Obrigatória)</a></li>
+                                <li><a href="#">INF01113 - ORGANIZAÇÃO DE COMPUTADORES B (Obrigatória)</a></li>
+                                <li><a href="#">INF01154 - REDES DE COMPUTADORES N (Obrigatória)</a></li>
+                                <li><a href="#">ENG10017 - SISTEMAS E SINAIS (Eletiva)</a></li>
+                                <li><a href="#">INF01151 - SISTEMAS OPERACIONAIS II N (Obrigatória)</a></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <!-- Etapa 7 -->
+                    <li>
+                        <button class="collapsible">Etapa 7</button>
+                        <div class="content">
+                            <ul>
+                                <li><a href="#">INF01191 - ARQUITETURAS AVANÇADAS DE COMPUTADORES (Eletiva)</a></li>
+                                <li><a href="#">MAT01169 - CÁLCULO NUMÉRICO (Eletiva)</a></li>
+                                <li><a href="#">INF01147 - COMPILADORES (Obrigatória)</a></li>
+                                <li><a href="#">INF01194 - CONCEPÇÃO DE CIRCUITOS INTEGRADOS II (Obrigatória)</a></li>
+                                <li><a href="#">ENG10027 - ELETRÔNICA FUNDAMENTAL II - B (Eletiva)</a></li>
+                                <li><a href="#">INF01001 - ESPECIFICAÇÃO FORMAL N (Eletiva)</a></li>
+                                <li><a href="#">INF01047 - FUNDAMENTOS DE COMPUTAÇÃO GRÁFICA (Eletiva)</a></li>
+                                <li><a href="#">INF01209 - FUNDAMENTOS DE TOLERÂNCIA A FALHAS (Eletiva)</a></li>
+                                <li><a href="#">ENG10045 - LABORATÓRIO DE ELETRÔNICA (Obrigatória)</a></li>
+                                <li><a href="#">ENG10032 - MICROCONTROLADORES (Eletiva)</a></li>
+                                <li><a href="#">INF01121 - MODELOS DE LINGUAGEM DE PROGRAMAÇÃO (Eletiva)</a></li>
+                                <li><a href="#">INF01008 - PROGRAMAÇÃO DISTRIBUÍDA E PARALELA (Eletiva)</a></li>
+                                <li><a href="#">ENG10004 - SISTEMAS DE CONTROLE I - B (Eletiva)</a></li>
+                                <li><a href="#">INF05512 - TEORIA DOS GRAFOS E ANÁLISE COMBINATÓRIA (Eletiva)</a></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <!-- Etapa 8 -->
+                    <li>
+                        <button class="collapsible">Etapa 8</button>
+                        <div class="content">
+                            <ul>
+                                <li><a href="#">INF01017 - APRENDIZADO DE MÁQUINA (Eletiva)</a></li>
+                                <li><a href="#">ENG04061 - CIRCUITOS ELETRÔNICOS INTEGRADOS (Eletiva)</a></li>
+                                <li><a href="#">ENG04055 - CIRCUITOS INTEGRADOS ANALÓGICOS (Eletiva)</a></li>
+                                <li><a href="#">INF05515 - COMPLEXIDADE DE ALGORITMOS - B (Eletiva)</a></li>
+                                <li><a href="#">ECO02254 - ECONOMIA A (Adicional)</a></li>
+                                <li><a href="#">INF01046 - FUNDAMENTOS DE PROCESSAMENTO DE IMAGENS (Eletiva)</a></li>
+                                <li><a href="#">ENG10005 - LABORATÓRIO DE CONTROLE (Eletiva)</a></li>
+                                <li><a href="#">INF01002 - PROTOCOLOS DE COMUNICAÇÃO (Eletiva)</a></li>
+                                <li><a href="#">ENG10026 - ROBÓTICA A (Eletiva)</a></li>
+                                <li><a href="#">INF01018 - SISTEMAS OPERACIONAIS DISTRIBUÍDOS E DE REDES (Eletiva)</a></li>
+                                <li><a href="#">INF01050 - TÓPICOS ESPECIAIS EM ENGENHARIA DE COMPUTAÇÃO I (Eletiva)</a></li>
+                                <li><a href="#">ENG04041 - TÓPICOS ESPECIAIS EM ENGENHARIA DE COMPUTAÇÃO III (Eletiva)</a></li>
+                                <li><a href="#">INF05024 - TÓPICOS ESPECIAIS EM ENGENHARIA DE COMPUTAÇÃO V (Eletiva)</a></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <!-- Etapa 9 -->
+                    <li>
+                        <button class="collapsible">Etapa 9</button>
+                        <div class="content">
+                            <ul>
+                                <li><a href="#">ADM01134 - ADMINISTRAÇÃO E FINANÇAS (Adicional)</a></li>
+                                <li><a href="#">INF01205 - CAD PARA SISTEMAS DIGITAIS (Eletiva)</a></li>
+                                <li><a href="#">INF01005 - COMUNICAÇÃO DE DADOS (Eletiva)</a></li>
+                                <li><a href="#">ENG10051 - DINÂMICA E CONTROLE DE ROBÔS (Eletiva)</a></li>
+                                <li><a href="#">ENG04457 - INSTRUMENTAÇÃO A (Eletiva)</a></li>
+                                <li><a href="#">ENG10052 - LABORATÓRIO DE ROBÓTICA (Eletiva)</a></li>
+                                <li><a href="#">ENG04476 - MICROPROCESSADORES II (Eletiva)</a></li>
+                                <li><a href="#">ECP99001 - PROJETO DE FINAL DE CURSO DE ENGENHARIA DE COMPUTAÇÃO (Obrigatória)</a></li>
+                                <li><a href="#">INF01034 - ROBÓTICA II (Eletiva)</a></li>
+                                <li><a href="#">INF01045 - SEGURANÇA EM SISTEMAS DE COMPUTAÇÃO (Eletiva)</a></li>
+                                <li><a href="#">ENG10019 - SISTEMAS DE CONTROLE DIGITAIS (Eletiva)</a></li>
+                                <li><a href="#">ENG10018 - SISTEMAS DE CONTROLE II (Eletiva)</a></li>
+                                <li><a href="#">HUM04020 - SOCIEDADE DA INFORMAÇÃO (Adicional)</a></li>
+                                <li><a href="#">ENG04034 - TÓPICOS ESPECIAIS EM ENGENHARIA DE COMPUTAÇÃO II (Eletiva)</a></li>
+                                <li><a href="#">INF01053 - TÓPICOS ESPECIAIS EM ENGENHARIA DE COMPUTAÇÃO IV (Eletiva)</a></li>
+                                <li><a href="#">INF05025 - TÓPICOS ESPECIAIS EM ENGENHARIA DE COMPUTAÇÃO VI (Eletiva)</a></li>
+                                <li><a href="#">TRABALHO DE GRADUAÇÃO I - ECP (Obrigatória)</a></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <!-- Etapa 10 -->
+                    <li>
+                        <button class="collapsible">Etapa 10</button>
+                        <div class="content">
+                            <ul>
+                                <li><a href="#">ENG04063 - DISPOSITIVOS SEMICONDUTORES (Eletiva)</a></li>
+                                <li><a href="#">INF01032 - EMPREENDIMENTO EM INFORMÁTICA (Eletiva)</a></li>
+                                <li><a href="#">INF01213 - FOTOGRAFIA COMPUTACIONAL (Adicional)</a></li>
+                                <li><a href="#">INF01145 - FUNDAMENTOS DE BANCO DE DADOS (Eletiva)</a></li>
+                                <li><a href="#">INF01015 - GERÊNCIA E APLICAÇÕES EM REDES (Eletiva)</a></li>
+                                <li><a href="#">EDU03071 - LÍNGUA BRASILEIRA DE SINAIS (LIBRAS) (Eletiva)</a></li>
+                                <li><a href="#">ENG04434 - PRINCÍPIOS DE COMUNICAÇÃO (Eletiva)</a></li>
+                                <li><a href="#">ENG04477 - PROCESSAMENTO DIGITAL DE SINAIS (Eletiva)</a></li>
+                                <li><a href="#">INF01059 - SISTEMAS EMBARCADOS (Eletiva)</a></li>
+                                <li><a href="#">ENG04057 - TESTE DE SISTEMAS ELETRÔNICOS (Eletiva)</a></li>
+                                <li><a href="#">INF05026 - TÓPICOS ESPECIAIS EM ENGENHARIA DE COMPUTAÇÃO VII (Adicional)</a></li>
+                                <li><a href="#">TRABALHO DE GRADUAÇÃO II - ECP (Obrigatória)</a></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <!-- Sem Etapa -->
+                    <li>
+                        <button class="collapsible">Sem Etapa</button>
+                        <div class="content">
+                            <ul>
+                                <li><a href="#">INF01030 - FUNDAMENTOS DE VISÃO COMPUTACIONAL (Eletiva)</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+        
+        <!-- Coluna Central: Menu de navegação, conteúdo principal e chat -->
+        <div class="coluna-central">
+            <nav>
+                <ul class="menu">
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#">FÓRUM</a></li>
+                    <li><a href="#">...</a></li>
+                    <li><a href="#">AVALIAÇÃO DE PROFESSORES</a></li>
+                </ul>
+            </nav>
+
+            <div class="coluna-conteudo">
+                <!-- Notícias e Novas Postagens -->
+                <div class="conteudo-esquerda">
+                    <section class="recentes">
+                        <h2>ADICIONADOS RECENTEMENTE</h2>
+                        <p>Conteúdos recentes adicionados ao material disponível no site.</p>
+                    </section>
+                    
+                    <section class="noticias">
+                        <h2>NOTÍCIAS</h2>
+                        <p>Acompanhe as últimas notícias da UFRGS.</p>
+                    </section>
+                </div>
+
+                <!-- Chat -->
+                <div class="conteudo-direita">
+                    <div class="chat-container">
+                        <div class="chat-box">
+                            <div class="chat-content">
+                                <!-- Aqui será adicionado o conteúdo do chat -->
+                            </div>
+                            <div class="chat-input">
+                                <input type="text" placeholder="Escreva sua mensagem..." />
+                                <button>Enviar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Coluna da Direita removida -->
     </div>
+
+    <script src="{{ url_for('static', filename='js/home.js') }}"></script>
 </body>
 </html>
