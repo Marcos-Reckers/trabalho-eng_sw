@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A.C.E - Acervo Comunitário Estudantil</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/avaliacao_professor.css') }}">
 </head>
 <body>
     <header>
@@ -13,7 +13,7 @@
         </div>
         <h1>A.C.E - Acervo Comunitário Estudantil</h1>
         <div class="login">
-            <a href="/login" ><button> Login / Register </button></a>
+            <button>Login / Register</button>
         </div>
     </header>
     
@@ -325,7 +325,7 @@
             </div>
         </aside>
         
-        <!-- Coluna Central: Menu de navegação, conteúdo principal e chat -->
+        <!-- CONTEUDO PRINCIPAL -->
         <div class="coluna-central">
             <nav>
                 <ul class="menu">
@@ -335,40 +335,21 @@
                 </ul>
             </nav>
 
-            <div class="coluna-conteudo">
-                <!-- Notícias e Novas Postagens -->
-                <div class="conteudo-esquerda">
-                    <section class="recentes">
-                        <h2>ADICIONADOS RECENTEMENTE</h2>
-                        <p>Conteúdos recentes adicionados ao material disponível no site.</p>
-                    </section>
-                    
-                    <section class="noticias">
-                        <h2>NOTÍCIAS</h2>
-                        <p>Acompanhe as últimas notícias da UFRGS.</p>
-                    </section>
-                </div>
-
-                <!-- Chat -->
-                <div class="conteudo-direita">
-                    <div class="chat-container">
-                        <div class="chat-box">
-                            <div class="chat-content">
-                                <!-- Aqui será adicionado o conteúdo do chat -->
-                            </div>
-                            <div class="chat-input">
-                                <input type="text" placeholder="Escreva sua mensagem..." />
-                                <button>Enviar</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Buscar...">
+                    <button class="search-btn">🔍</button>
+                <button class="add-btn">Adicionar Professor</button>
             </div>
+            <div class="review-box">
+                <textarea placeholder="Deixe sua avaliação..."></textarea>
+                <div class="rating">
+                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+                <button class="submit-btn">SUBMIT</button>
+            </div>
+    
+    
         </div>
-
-        <!-- Coluna da Direita removida -->
-    </div>
-
     <script src="{{ url_for('static', filename='js/home.js') }}"></script>
 </body>
 </html>

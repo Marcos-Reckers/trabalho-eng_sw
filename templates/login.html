@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A.C.E - Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="{{ url_for('home') }}">
+                <img src="{{ url_for('static', filename='img/logo.svg') }}" alt="Logo A.C.E">
+            </a>
+        </div>
+        <h1>A.C.E - Acervo Comunitário Estudantil</h1>
+        <div></div>
+    </header>
+
+    <div class="login-container">
+        <form class="login-form">
+            <input type="text" placeholder="USUARIO" required>
+            <input type="text" placeholder="NUMERO CARTÃO" required>
+            <input type="password" placeholder="SENHA" required>
+            <button type="submit">LOGIN/REGISTER</button>
+            <div class="google-login">
+                <button type="button">
+                    <img src="{{ url_for('static', filename='img/google-logo.png') }}" alt="Google Logo">
+                    Sign in with Google
+                </button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

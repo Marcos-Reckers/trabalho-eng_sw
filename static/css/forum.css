@@ -176,6 +176,7 @@ aside .content ul li a:hover {
     width: 80%; /* Define a largura da coluna central */
     padding: 0 20px;
     overflow-y: auto;
+    
 }
 
 nav {
@@ -265,117 +266,85 @@ main section p {
     color: #333;
 }
 
-/* Coluna de Conteúdo Principal */
-.coluna-conteudo {
+
+/* TODO: alinhar o fórum */
+.forum-container {
+    width: 100%;
     display: flex;
-    flex-grow: 1;
+    gap: 20px;
 }
 
-/* Notícias e Novas Postagens (Verde) */
-.conteudo-esquerda {
-    width: 70%; /* Maior espaço para o conteúdo */
+.search-bar {
     display: flex;
-    flex-direction: column;
-    gap: 20px; /* Espaçamento entre as seções */
-}
-.recentes{
-    background-image: url('/static/img/materiais.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-.noticias{
-    background-image: url('/static/img/noticias.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    width: 100%;
 }
 
-.recentes, .noticias {
-    border-radius: 8px;
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    flex-grow: 1;
-}
-
-.recentes h2, .noticias h2 {
-    background-color: #bdc3c7;
-    font-size: 22px;
-    border-radius: 8px;
-    margin-bottom: 10px;
-    color: #2c3e50;
-}
-
-
-.recentes p, .noticias p {
-    background-color: #bdc3c7;
-    font-size: 16px;
-    border-radius: 8px;
-    margin-bottom: 10px;
-    padding: 10%;
-    color: #7f8c8d;
-}
-
-/* Chat (Laranja) */
-.conteudo-direita {
-    width: 40%; /* Menor espaço para o chat */
-    padding-left: 20px;
-}
-
-.chat-container {
-    background-color: #fff;
-    border-radius: 15px; /* Bordas mais arredondadas */
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); /* Sombra mais pronunciada para o efeito de flutuação */
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    height: calc(100vh - 235px);/* Margem de 20px do final da página */
-}
-
-.chat-box {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    overflow: hidden;
-    border-radius: 15px; /* Bordas arredondadas internas */
-}
-
-.chat-content {
-    flex-grow: 1;
+.search-bar input[type="text"] {
+    width: calc(100% - 120px);
     padding: 10px;
-    overflow-y: auto;
-    background-color: #f9f9f9;
-    border-bottom: 1px solid #ddd;
-    border-radius: 15px 15px 0 0; /* Bordas arredondadas apenas na parte superior */
-}
-
-.chat-input {
-    display: flex;
-    padding: 10px;
-    background-color: #f0f0f0;
-    border-radius: 0 0 15px 15px; /* Bordas arredondadas apenas na parte inferior */
-}
-
-.chat-input input[type="text"] {
-    flex-grow: 1;
-    border: none;
-    padding: 10px;
+    border: 1px solid #ccc;
     border-radius: 5px;
-    margin-right: 10px;
-    box-sizing: border-box;
-    font-size: 14px;
+    outline: none;
 }
 
-.chat-input button {
-    background-color: #7f8c8d;
-    border: none;
-    color: #fff;
+.search-btn, .filter-btn {
     padding: 10px 15px;
+    background-color: #7f8c8d;
+    color: #fff;
+    border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
 }
 
-.chat-input button:hover {
-    background-color: #5a6d73;
+.topics-list {
+    width: 50%;
+    max-height: 400px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.topic-item {
+    background-color: #ecf0f1;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.new-topic-box {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.new-topic-box input[type="text"],
+.new-topic-box textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+.new-topic-box textarea {
+    height: 200px;
+    resize: none;
+}
+
+.submit-btn {
+    padding: 10px;
+    background-color: #7f8c8d;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    align-self: flex-end;
+    width: 100px;
+    text-align: center;
 }

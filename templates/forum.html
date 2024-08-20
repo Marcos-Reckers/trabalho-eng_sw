@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A.C.E - Acervo Comunitário Estudantil</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/forum.css') }}">
 </head>
 <body>
     <header>
@@ -13,7 +13,7 @@
         </div>
         <h1>A.C.E - Acervo Comunitário Estudantil</h1>
         <div class="login">
-            <a href="/login" ><button> Login / Register </button></a>
+            <button>Login / Register</button>
         </div>
     </header>
     
@@ -324,9 +324,11 @@
                 </ul>
             </div>
         </aside>
-        
-        <!-- Coluna Central: Menu de navegação, conteúdo principal e chat -->
+    
+
+        <!-- Coluna Central: Fórum -->
         <div class="coluna-central">
+
             <nav>
                 <ul class="menu">
                     <li><a href="/">HOME</a></li>
@@ -334,41 +336,36 @@
                     <li><a href="/avaliacao_professor">AVALIAÇÃO DE PROFESSORES</a></li>
                 </ul>
             </nav>
-
-            <div class="coluna-conteudo">
-                <!-- Notícias e Novas Postagens -->
-                <div class="conteudo-esquerda">
-                    <section class="recentes">
-                        <h2>ADICIONADOS RECENTEMENTE</h2>
-                        <p>Conteúdos recentes adicionados ao material disponível no site.</p>
-                    </section>
-                    
-                    <section class="noticias">
-                        <h2>NOTÍCIAS</h2>
-                        <p>Acompanhe as últimas notícias da UFRGS.</p>
-                    </section>
+            
+            <div class="forum-container">
+                <!-- Barra de Busca e Filtros -->
+                <div class="search-bar">
+                    <input type="text" placeholder="Buscar...">
+                    <button class="search-btn">🔍</button>
+                    <button class="filter-btn">FILTROS</button>
                 </div>
-
-                <!-- Chat -->
-                <div class="conteudo-direita">
-                    <div class="chat-container">
-                        <div class="chat-box">
-                            <div class="chat-content">
-                                <!-- Aqui será adicionado o conteúdo do chat -->
-                            </div>
-                            <div class="chat-input">
-                                <input type="text" placeholder="Escreva sua mensagem..." />
-                                <button>Enviar</button>
-                            </div>
-                        </div>
-                    </div>
+                
+                <!-- Lista de Tópicos -->
+                <div class="topics-list">
+                    <div class="topic-item">A prova de eng de software é muito difícil?!?</div>
+                    <div class="topic-item">Tópico 2</div>
+                    <div class="topic-item">Tópico 3</div>
+                    <div class="topic-item">Tópico 4</div>
+                    <div class="topic-item">Tópico 5</div>
+                    <div class="topic-item">Tópico 6</div>
+                    <div class="topic-item">Tópico 7</div>
+                </div>
+                
+                <!-- Caixa de Criação de Novo Tópico -->
+                <div class="new-topic-box">
+                    <input type="text" placeholder="Tópico...">
+                    <textarea placeholder="Digite seu texto..."></textarea>
+                    <button class="submit-btn">SUBMIT</button>
                 </div>
             </div>
+    
+    
         </div>
-
-        <!-- Coluna da Direita removida -->
-    </div>
-
     <script src="{{ url_for('static', filename='js/home.js') }}"></script>
 </body>
 </html>
