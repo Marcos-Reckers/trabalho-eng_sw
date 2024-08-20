@@ -394,8 +394,43 @@
                         <button>PROVAS</button>
                         <button>LISTAS</button>
                     </div>
-                </div>
+                </div>                
             </div>
+            <div class="add-material-form">
+                <h3>Adicionar Novo Material</h3>
+                <form action="/add_material" method="POST" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="material-type">Tipo de Material:</label>
+                        <select id="material-type" name="material_type">
+                            <option value="livro">Livro</option>
+                            <option value="resumo">Resumo</option>
+                            <option value="prova">Prova</option>
+                            <option value="lista">Lista</option>
+                        </select>
+                    </div>
+            
+                    <div class="form-group">
+                        <label for="material-title">Título:</label>
+                        <input type="text" id="material-title" name="material_title" required>
+                    </div>
+            
+                    <div class="form-group">
+                        <label for="material-file">Arquivo:</label>
+                        <input type="file" id="material-file" name="material_file" required>
+                    </div>
+            
+                    <button type="submit">Adicionar Material</button>
+                </form>
+            </div>
+            <div class="material-list">
+                <h3>Materiais Disponíveis</h3>
+                <ul>
+                    {% for material in materials %}
+                    <li>{{ material.title }} - <a href="{{ material.url }}">Download</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+            
         </div>
     </div>
 
