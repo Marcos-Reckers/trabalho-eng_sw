@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A.C.E - Acervo Comunitário Estudantil</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/forum.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/algprog.css') }}">
 </head>
 <body>
     <header>
@@ -13,7 +13,7 @@
         </div>
         <h1>A.C.E - Acervo Comunitário Estudantil</h1>
         <div class="login">
-            <button>Login / Register</button>
+            <a href="/login" ><button> Login / Register </button></a>
         </div>
     </header>
     
@@ -32,7 +32,7 @@
                         <button class="collapsible">Etapa 1</button>
                         <div class="content">
                             <ul>
-                                <li><a href="#">INF01202 - ALGORÍTMOS E PROGRAMAÇÃO - CIC (Obrigatória)</a></li>
+                                <li><a href="/algprog">INF01202 - ALGORÍTMOS E PROGRAMAÇÃO - CIC (Obrigatória)</a></li>
                                 <li><a href="#">MAT01353 - CÁLCULO E GEOMETRIA ANALÍTICA I - A (Obrigatória)</a></li>
                                 <li><a href="#">INF05008 - FUNDAMENTOS DE ALGORITMOS (Obrigatória)</a></li>
                                 <li><a href="#">INF01107 - INTRODUÇÃO À ARQUITETURA DE COMPUTADORES (Obrigatória)</a></li>
@@ -324,11 +324,8 @@
                 </ul>
             </div>
         </aside>
-    
-
-        <!-- Coluna Central: Fórum -->
+        
         <div class="coluna-central">
-
             <nav>
                 <ul class="menu">
                     <li><a href="/">HOME</a></li>
@@ -337,34 +334,71 @@
                 </ul>
             </nav>
 
-            <div class="search-bar">
-                <input type="text" placeholder="Buscar...">
-                <button class="search-btn">🔍</button>
-                <button class="filter-btn">FILTROS</button>
+            <div class="course-info">
+                <h2>INF01202 - ALGORÍTMOS E PROGRAMAÇÃO - CIC</h2>
             </div>
             
-            <div class="forum-container">
-                <!-- Lista de Tópicos -->
-                <div class="topics-list">
-                    <div class="topic-item">A prova de eng de software é muito difícil?!?</div>
-                    <div class="topic-item">Tópico 2</div>
-                    <div class="topic-item">Tópico 3</div>
-                    <div class="topic-item">Tópico 4</div>
-                    <div class="topic-item">Tópico 5</div>
-                    <div class="topic-item">Tópico 6</div>
-                    <div class="topic-item">Tópico 7</div>
+            <div class="content-section">
+                <div class="professor-card">
+                    <div class="professor-info">
+                        <div class="professor-avatar"></div>
+                        <div class="professor-details">
+                            <h3>Marcelo Walter</h3>
+                            <p>mwalter@inf.ufrgs.br</p>
+                            <div class="rating">
+                                ★★★★★
+                            </div>
+                        </div>
+                    </div>
+                    <div class="material-links">
+                        <button>LIVROS</button>
+                        <button>RESUMOS</button>
+                        <button>PROVAS</button>
+                        <button>LISTAS</button>
+                    </div>
                 </div>
-                
-                <!-- Caixa de Criação de Novo Tópico -->
-                <div class="new-topic-box">
-                    <input type="text" placeholder="Tópico...">
-                    <textarea placeholder="Digite seu texto..."></textarea>
-                    <button class="submit-btn">SUBMIT</button>
+
+                <div class="professor-card">
+                    <div class="professor-info">
+                        <div class="professor-avatar"></div>
+                        <div class="professor-details">
+                            <h3>Professor 2</h3>
+                            <p>Professor_2r@inf.ufrgs.br</p>
+                            <div class="rating">
+                                ★★
+                            </div>
+                        </div>
+                    </div>
+                    <div class="material-links">
+                        <button>LIVROS</button>
+                        <button>RESUMOS</button>
+                        <button>PROVAS</button>
+                        <button>LISTAS</button>
+                    </div>
+                </div>
+
+                <div class="professor-card">
+                    <div class="professor-info">
+                        <div class="professor-avatar"></div>
+                        <div class="professor-details">
+                            <h3>Professor 3</h3>
+                            <p>Professor_3r@inf.ufrgs.br</p>
+                            <div class="rating">
+                                ★★★★
+                            </div>
+                        </div>
+                    </div>
+                    <div class="material-links">
+                        <button>LIVROS</button>
+                        <button>RESUMOS</button>
+                        <button>PROVAS</button>
+                        <button>LISTAS</button>
+                    </div>
                 </div>
             </div>
-    
-    
         </div>
+    </div>
+
     <script src="{{ url_for('static', filename='js/home.js') }}"></script>
 </body>
 </html>

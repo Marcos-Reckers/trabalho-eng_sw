@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A.C.E - Acervo Comunitário Estudantil</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/forum.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/avaliacao_professor.css') }}">
 </head>
 <body>
     <header>
@@ -324,11 +324,9 @@
                 </ul>
             </div>
         </aside>
-    
-
-        <!-- Coluna Central: Fórum -->
+        
+        <!-- CONTEUDO PRINCIPAL -->
         <div class="coluna-central">
-
             <nav>
                 <ul class="menu">
                     <li><a href="/">HOME</a></li>
@@ -339,28 +337,15 @@
 
             <div class="search-bar">
                 <input type="text" placeholder="Buscar...">
-                <button class="search-btn">🔍</button>
-                <button class="filter-btn">FILTROS</button>
+                    <button class="search-btn">🔍</button>
+                <button class="add-btn">Adicionar Professor</button>
             </div>
-            
-            <div class="forum-container">
-                <!-- Lista de Tópicos -->
-                <div class="topics-list">
-                    <div class="topic-item">A prova de eng de software é muito difícil?!?</div>
-                    <div class="topic-item">Tópico 2</div>
-                    <div class="topic-item">Tópico 3</div>
-                    <div class="topic-item">Tópico 4</div>
-                    <div class="topic-item">Tópico 5</div>
-                    <div class="topic-item">Tópico 6</div>
-                    <div class="topic-item">Tópico 7</div>
+            <div class="review-box">
+                <textarea placeholder="Deixe sua avaliação..."></textarea>
+                <div class="rating">
+                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                 </div>
-                
-                <!-- Caixa de Criação de Novo Tópico -->
-                <div class="new-topic-box">
-                    <input type="text" placeholder="Tópico...">
-                    <textarea placeholder="Digite seu texto..."></textarea>
-                    <button class="submit-btn">SUBMIT</button>
-                </div>
+                <button class="submit-btn">SUBMIT</button>
             </div>
     
     

@@ -176,7 +176,6 @@ aside .content ul li a:hover {
     width: 80%; /* Define a largura da coluna central */
     padding: 0 20px;
     overflow-y: auto;
-    
 }
 
 nav {
@@ -211,140 +210,82 @@ nav .menu li a:hover {
     color: #333;
 }
 
-main {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+.content-section {
+    display: flex;
+    justify-content: space-between;
+}
+
+.course-info {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    margin-bottom: 20px; /* Espaçamento abaixo */
+}
+
+.course-info h2 {
+    background-color: #ffffff; /* Fundo branco */
+    color: #2c3e50; /* Cor do texto */
+    padding: 10px 20px; /* Espaçamento interno */
+    border-radius: 12px; /* Bordas arredondadas */
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
+    font-size: 24px; /* Tamanho da fonte */
+    text-align: center; /* Centraliza o texto dentro do elemento */
+    font-weight: bold; /* Deixa o texto em negrito */
+}
+
+
+.professor-card {
+    background-color: #ffffff;
     padding: 20px;
-    overflow-y: auto;
-}
-
-main section {
-    margin-bottom: 30px;
-}
-
-main section h2 {
-    font-size: 22px;
-    margin-bottom: 10px;
-    color: #2c3e50;
-}
-
-main section p {
-    font-size: 16px;
-    color: #7f8c8d;
-}
-
-
-.menu-navegacao {
-    background-color: #fff;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 8px;
+    border-radius: 10px;
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    width: 30%;
 }
 
-.menu-navegacao .menu {
-    list-style: none;
+.professor-info {
     display: flex;
-    justify-content: space-around;
-}
-
-.menu-navegacao .menu li {
-    display: inline;
-}
-
-.menu-navegacao .menu li a {
-    text-decoration: none;
-    color: #7f8c8d;
-    padding: 10px 15px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.menu-navegacao .menu li a:hover {
-    background-color: #ecf0f1;
-    color: #333;
-}
-
-
-/* TODO: alinhar o fórum */
-.forum-container {
-    width: 100%;
-    display: flex;
-    gap: 20px;
-}
-
-.search-bar {
-    display: flex;
-    align-items: center;
-    gap: 10px;
     margin-bottom: 20px;
-    width: 100%;
 }
 
-.search-bar input[type="text"] {
-    width: calc(100% - 120px);
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    outline: none;
+.professor-avatar {
+    width: 60px;
+    height: 60px;
+    background-color: #bdc3c7;
+    border-radius: 50%;
+    margin-right: 20px;
 }
 
-.search-btn, .filter-btn {
-    padding: 10px 15px;
+.professor-details h3 {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.professor-details p {
+    margin-bottom: 10px;
+    color: #7f8c8d;
+}
+
+.rating {
+    color: #f1c40f;
+    font-size: 18px;
+}
+
+.material-links {
+    display: flex;
+    flex-direction: column;
+}
+
+.material-links button {
     background-color: #7f8c8d;
     color: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    text-align: left;
 }
 
-.topics-list {
-    width: 50%;
-    max-height: 400px;
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.topic-item {
-    background-color: #ecf0f1;
-    padding: 15px;
-    border-radius: 5px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-}
-
-.new-topic-box {
-    width: 45%;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.new-topic-box input[type="text"],
-.new-topic-box textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    outline: none;
-}
-
-.new-topic-box textarea {
-    height: 200px;
-    resize: none;
-}
-
-.submit-btn {
-    padding: 10px;
-    background-color: #7f8c8d;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    align-self: flex-end;
-    width: 100px;
-    text-align: center;
+.material-links button:last-child {
+    margin-bottom: 0;
 }

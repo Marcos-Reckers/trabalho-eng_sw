@@ -170,13 +170,11 @@ aside .content ul li a {
 aside .content ul li a:hover {
     background-color: #dcdde1;
 }
-
 /* Coluna Central */
 .coluna-central {
     width: 80%; /* Define a largura da coluna central */
     padding: 0 20px;
     overflow-y: auto;
-    
 }
 
 nav {
@@ -265,86 +263,75 @@ main section p {
     background-color: #ecf0f1;
     color: #333;
 }
-
-
-/* TODO: alinhar o fórum */
-.forum-container {
-    width: 100%;
-    display: flex;
-    gap: 20px;
-}
-
 .search-bar {
     display: flex;
     align-items: center;
-    gap: 10px;
     margin-bottom: 20px;
-    width: 100%;
 }
 
-.search-bar input[type="text"] {
-    width: calc(100% - 120px);
+.search-bar input {
+    flex-grow: 1;
     padding: 10px;
-    border: 1px solid #ccc;
     border-radius: 5px;
-    outline: none;
+    border: 1px solid #ccc;
+    margin-right: 10px;
 }
 
-.search-btn, .filter-btn {
-    padding: 10px 15px;
-    background-color: #7f8c8d;
-    color: #fff;
+.search-bar .search-btn {
+    background-color: #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+}
+
+.search-bar .search-btn img {
+    width: 20px;
+    height: auto;
+}
+
+.search-bar .add-btn {
+    background-color: #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    margin-left: 10px;
+}
+
+.review-box {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.review-box textarea {
+    width: 100%;
+    height: 150px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+
+.review-box .rating {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.review-box .rating span {
+    color: black;
+}
+
+.review-box .submit-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #ccc;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-}
-
-.topics-list {
-    width: 50%;
-    max-height: 400px;
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.topic-item {
-    background-color: #ecf0f1;
-    padding: 15px;
-    border-radius: 5px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-}
-
-.new-topic-box {
-    width: 45%;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.new-topic-box input[type="text"],
-.new-topic-box textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    outline: none;
-}
-
-.new-topic-box textarea {
-    height: 200px;
-    resize: none;
-}
-
-.submit-btn {
-    padding: 10px;
-    background-color: #7f8c8d;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    align-self: flex-end;
-    width: 100px;
     text-align: center;
 }

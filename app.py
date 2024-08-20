@@ -19,15 +19,8 @@ topics = [
 
 # Rota principal
 @app.route('/')
-def index():
-    etapa_disciplinas = disciplinas["CIC"]
-    return render_template('forum.html', etapa_disciplinas=etapa_disciplinas, selected="CIC", topics=topics)
-
-# Rota para alternar entre CIC e ECP
-@app.route('/toggle/<string:curso>')
-def toggle(curso):
-    etapa_disciplinas = disciplinas.get(curso, [])
-    return render_template('forum.html', etapa_disciplinas=etapa_disciplinas, selected=curso, topics=topics)
+def home():
+    return render_template('home.html')
 
 # Rota para criar um novo tópico no fórum
 @app.route('/forum', methods=['POST'])
@@ -36,12 +29,17 @@ def add_topic():
     topics.append({"title": new_topic_title})
     return render_template('forum.html', etapa_disciplinas=disciplinas["CIC"], topics=topics, selected="CIC")
 
-# Rota para buscar tópicos no fórum
-@app.route('/forum/search', methods=['GET'])
-def search_forum():
-    search_query = request.args.get('search', '').lower()
-    filtered_topics = [topic for topic in topics if search_query in topic['title'].lower()]
-    return render_template('forum.html', etapa_disciplinas=disciplinas["CIC"], topics=filtered_topics, selected="CIC")
+@app.route('/forum')
+def forum():
+    return render_template('forum.html')
+
+@app.route('/avaliacao_professor')
+def avaliacao_professor():
+    return render_template('avaliacao_professor.html')
+
+@app.route('/algprog')
+def algprog():
+    return render_template('diciplinas/algprog.html')
 
 if __name__ == '__main__':
     app.run(debug=True)

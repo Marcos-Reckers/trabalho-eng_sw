@@ -1,0 +1,113 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f0f0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+}
+
+header {
+    background-image: url('/static/img/background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 40px;
+    background-color: #fff;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Preencher toda a largura da página */
+    position: fixed; /* Fixa o header no topo da página */
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+header .logo img {
+    height: 90px;
+    border-radius: 50%;
+}
+
+header h1 {
+    font-size: 22px;
+    font-weight: bold;
+    color: #2c3e50;
+    background-color: #dcdde1;
+    padding: 5px 10px;
+    border-radius: 12px;
+}
+
+.login-container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+    margin-top: 200px; /* Adiciona margem superior para compensar o header fixo */
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    outline: none;
+}
+
+.login-form button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #7f8c8d;
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-form button[type="submit"]:hover {
+    background-color: #5a6d73;
+}
+
+.google-login {
+    margin-top: 20px;
+}
+
+.google-login button {
+    width: 100%;
+    padding: 10px;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.google-login button img {
+    height: 20px;
+    margin-right: 10px;
+}
+
+.google-login button:hover {
+    background-color: #f1f1f1;
+}
