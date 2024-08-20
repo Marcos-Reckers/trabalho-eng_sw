@@ -18,5 +18,9 @@ def forum():
 def avaliacao_professor():
     return render_template('avaliacao_professor.html')
 
+@app.route('/algprog')
+def algprog():
+    return render_template('diciplinas/algprog.html')
+
 if __name__ == '__main__':
     app.run(debug=True)

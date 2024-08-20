@@ -1,0 +1,291 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: #333;
+}
+
+header {
+    background-image: url('/static/img/background.png');
+    background-size: cover; /* Ajusta a imagem para cobrir toda a área */
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Impede que a imagem se repita */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #fff;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin: 10px;
+}
+
+header .logo img {
+    height: 100px;
+    border-radius: 50%;
+}
+
+header h1 {
+    font-size: 26px;
+    font-weight: bold;
+    color: #2c3e50;
+    background-color: #dcdde1;
+    padding: 5px 10px;
+    border-radius: 12px;
+}
+
+header .login button {
+    background-color: #7f8c8d;
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+header .login button:hover {
+    background-color: #5a6d73;
+}
+
+.page-container {
+    display: flex;
+    flex-grow: 1;
+    margin: 10px;
+    height: calc(100vh - 140px); /* Ajusta o container para ocupar toda a altura da tela, menos o header */
+    overflow: hidden;
+}
+
+/* Coluna da Esquerda */
+.coluna-esquerda {
+    width: 20%; /* Define a largura inicial da coluna esquerda */
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    resize: horizontal; /* Permite o redimensionamento horizontal */
+    overflow: auto; /* Habilita o scroll tanto vertical quanto horizontal */
+    min-width: 200px; /* Define uma largura mínima para a coluna */
+}
+
+.submenu-selector {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.submenu-btn {
+    background-color: #7f8c8d;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    flex-grow: 1;
+    margin-right: 5px;
+    color: #fff;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.submenu-btn:last-child {
+    margin-right: 0;
+}
+
+.submenu-btn.active {
+    background-color: #5a6d73;
+}
+
+.submenu-btn:hover {
+    background-color: #4a5a60;
+}
+
+.submenu-content {
+    display: none;
+}
+
+.submenu-content.active {
+    display: block;
+}
+
+aside .collapsible {
+    background-color: #ecf0f1;
+    color: #333;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 16px;
+    margin: 0; /* Remove qualquer margem */
+    border-radius: 0; /* Remove o arredondamento nos blocos */
+    transition: background-color 0.3s ease;
+}
+
+aside .collapsible:hover {
+    background-color: #bdc3c7;
+}
+
+aside .content {
+    padding: 0;  /* Remove padding para garantir que não sobre espaço */
+    max-height: 0;
+    overflow: hidden; /* Garantir que todo o conteúdo fique oculto */
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out; /* Transição suave ao expandir */
+    background-color: #f5f5f5;
+    border-left: 3px solid #7f8c8d;
+    border-right: 3px solid #7f8c8d;
+    margin: 0; /* Remove qualquer margem */
+}
+
+aside .content ul {
+    padding: 10px 18px; /* Ajusta o padding para as disciplinas */
+    list-style: none;
+}
+
+aside .content ul li {
+    margin: 5px 0; /* Espaçamento entre as disciplinas */
+}
+
+aside .content ul li a {
+    text-decoration: none;
+    color: #2980b9;
+    padding: 5px 10px;
+    display: block;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+aside .content ul li a:hover {
+    background-color: #dcdde1;
+}
+
+/* Coluna Central */
+.coluna-central {
+    width: 80%; /* Define a largura da coluna central */
+    padding: 0 20px;
+    overflow-y: auto;
+}
+
+nav {
+    background-color: #fff;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+nav .menu {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav .menu li {
+    display: inline;
+}
+
+nav .menu li a {
+    text-decoration: none;
+    color: #7f8c8d;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav .menu li a:hover {
+    background-color: #ecf0f1;
+    color: #333;
+}
+
+.content-section {
+    display: flex;
+    justify-content: space-between;
+}
+
+.course-info {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    margin-bottom: 20px; /* Espaçamento abaixo */
+}
+
+.course-info h2 {
+    background-color: #ffffff; /* Fundo branco */
+    color: #2c3e50; /* Cor do texto */
+    padding: 10px 20px; /* Espaçamento interno */
+    border-radius: 12px; /* Bordas arredondadas */
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
+    font-size: 24px; /* Tamanho da fonte */
+    text-align: center; /* Centraliza o texto dentro do elemento */
+    font-weight: bold; /* Deixa o texto em negrito */
+}
+
+
+.professor-card {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    width: 30%;
+}
+
+.professor-info {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.professor-avatar {
+    width: 60px;
+    height: 60px;
+    background-color: #bdc3c7;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.professor-details h3 {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.professor-details p {
+    margin-bottom: 10px;
+    color: #7f8c8d;
+}
+
+.rating {
+    color: #f1c40f;
+    font-size: 18px;
+}
+
+.material-links {
+    display: flex;
+    flex-direction: column;
+}
+
+.material-links button {
+    background-color: #7f8c8d;
+    color: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: left;
+}
+
+.material-links button:last-child {
+    margin-bottom: 0;
+}
