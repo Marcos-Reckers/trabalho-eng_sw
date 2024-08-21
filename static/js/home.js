@@ -29,4 +29,26 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Mostrar inicialmente o submenu CIC
     document.getElementById("cic").style.display = "block";
+
+    // Verificar se o usuário está logado
+    const userNameElement = document.getElementById('user-name');
+    const loginLink = document.getElementById('login-link');
+
+    // Função para verificar o estado do login
+    function checkLoginStatus() {
+        const username = sessionStorage.getItem('username');
+        
+        if (username) {
+            // Se o usuário estiver logado, esconder o botão de login e mostrar o nome do usuário
+            loginLink.style.display = 'none'; // Oculta o link de login
+            userNameElement.textContent = `Bem-vindo, ${username}!`; // Exibe o nome do usuário
+        } else {
+            // Se o usuário não estiver logado, mostrar o botão de login
+            loginLink.style.display = 'block'; // Mostra o link de login
+            userNameElement.textContent = ''; // Remove o nome do usuário
+        }
+    }
+
+    // Chama a função para verificar o estado do login ao carregar a página
+    checkLoginStatus();
 });
