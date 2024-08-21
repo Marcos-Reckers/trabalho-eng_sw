@@ -341,59 +341,60 @@
             <div class="content-section">
                 <!-- Card do Professor 1 -->
                 {% for professor, professor_materials in materials.items() %}
-                <div class="professor-card">
-                    <div class="professor-info">
-                        <div class="professor-avatar"></div>
-                        <div class="professor-details">
-                            <h3>{{ professor.replace('_', ' ').title() }}</h3>
-                            <p>{{ professor }}@inf.ufrgs.br</p>
-                            <div class="rating">★★★★★</div>
-                        </div>
-                    </div>
-                    
-                    <div class="material-lists">
-                        <!-- Livros -->
-                        <button class="collapsible">Livros</button>
-                        <div class="content">
-                            <ul>
-                                {% for livro in professor_materials["livros"] %}
-                                <li><a href="{{ livro.url }}">{{ livro.title }}</a></li>
-                                {% endfor %}
-                            </ul>
-                        </div>
+    <div class="professor-card">
+        <div class="professor-info">
+            <div class="professor-avatar"></div>
+            <div class="professor-details">
+                <h3>{{ professor.replace('_', ' ').title() }}</h3>
+                <p>{{ professor }}@inf.ufrgs.br</p>
+                <div class="rating">★★★★★</div>
+            </div>
+        </div>
+        
+        <div class="material-lists">
+            <!-- Livros -->
+            <button class="collapsible">Livros</button>
+            <div class="content">
+                <ul>
+                    {% for livro in professor_materials["livros"] %}
+                    <li><a href="{{ url_for('download_file', filename=livro['url']) }}">{{ livro['title'] }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
 
-                        <!-- Resumos -->
-                        <button class="collapsible">Resumos</button>
-                        <div class="content">
-                            <ul>
-                                {% for resumo in professor_materials["resumos"] %}
-                                <li><a href="{{ resumo.url }}">{{ resumo.title }}</a></li>
-                                {% endfor %}
-                            </ul>
-                        </div>
+            <!-- Resumos -->
+            <button class="collapsible">Resumos</button>
+            <div class="content">
+                <ul>
+                    {% for resumo in professor_materials["resumos"] %}
+                    <li><a href="{{ url_for('download_file', filename=resumo['url']) }}">{{ resumo['title'] }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
 
-                        <!-- Provas -->
-                        <button class="collapsible">Provas</button>
-                        <div class="content">
-                            <ul>
-                                {% for prova in professor_materials["provas"] %}
-                                <li><a href="{{ prova.url }}">{{ prova.title }}</a></li>
-                                {% endfor %}
-                            </ul>
-                        </div>
+            <!-- Provas -->
+            <button class="collapsible">Provas</button>
+            <div class="content">
+                <ul>
+                    {% for prova in professor_materials["provas"] %}
+                    <li><a href="{{ url_for('download_file', filename=prova['url']) }}">{{ prova['title'] }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
 
-                        <!-- Listas -->
-                        <button class="collapsible">Listas</button>
-                        <div class="content">
-                            <ul>
-                                {% for lista in professor_materials["listas"] %}
-                                <li><a href="{{ lista.url }}">{{ lista.title }}</a></li>
-                                {% endfor %}
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
+            <!-- Listas -->
+            <button class="collapsible">Listas</button>
+            <div class="content">
+                <ul>
+                    {% for lista in professor_materials["listas"] %}
+                    <li><a href="{{ url_for('download_file', filename=lista['url']) }}">{{ lista['title'] }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
             </div>
 
             <div class="add-material-form">

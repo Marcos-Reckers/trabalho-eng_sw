@@ -1,4 +1,5 @@
 from flask import Flask, request, redirect, url_for, render_template, send_from_directory
+import urllib.parse
 import os
 
 app = Flask(__name__)
@@ -15,14 +16,16 @@ def get_materials_by_professor(professor):
         "listas": []
     }
     
-    # Caminho para os materiais do professor específico
     professor_folder = os.path.join(app.config['UPLOAD_FOLDER'], professor)
     
     for material_type in materials.keys():
         material_folder = os.path.join(professor_folder, material_type)
         if os.path.exists(material_folder):
             materials[material_type] = [
-                {"title": f, "url": url_for('static', filename=os.path.join(material_folder, f))}
+                {
+                    "title": f,
+                    "url": url_for('download_file', filename=urllib.parse.quote(f"{professor}/{material_type}/{f}"))
+                }
                 for f in os.listdir(material_folder)
                 if os.path.isfile(os.path.join(material_folder, f))
             ]
@@ -37,7 +40,7 @@ def ensure_directories(professor, material_type):
     return path
 
 
-@app.route('/uploads/<path:filename>')
+@app.route('/<path:filename>')
 def download_file(filename):
     return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
 
@@ -82,7 +85,7 @@ def add_material():
     material_file.save(filepath)
 
     # Redireciona de volta para a página principal
-    return algprog()
+    return redirect(url_for('algprog'))
 
 if __name__ == '__main__':
     # Cria o diretório de uploads, se não existir
