@@ -14,6 +14,7 @@
             </a>
         </div>
         <h1>A.C.E - Acervo Comunitário Estudantil</h1>
+        <div></div>
     </header>
 
     <div class="login-container">
@@ -22,12 +23,6 @@
             <input type="text" id="card-number" placeholder="NÚMERO DO CARTÃO (8 dígitos)" required> <!-- Adicionado ID -->
             <input type="password" id="password" placeholder="SENHA" required> <!-- Adicionado ID -->
             <button type="submit">LOGIN/REGISTER</button>
-            <div class="google-login">
-                <button type="button">
-                    <img src="{{ url_for('static', filename='img/google-logo.png') }}" alt="Google Logo">
-                    Sign in with Google
-                </button>
-            </div>
         </form>
     </div>
     <script src="{{ url_for('static', filename='js/login.js') }}"></script>
