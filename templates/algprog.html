@@ -339,73 +339,83 @@
             </div>
             
             <div class="content-section">
+                <!-- Card do Professor 1 -->
+                {% for professor, professor_materials in materials.items() %}
                 <div class="professor-card">
                     <div class="professor-info">
                         <div class="professor-avatar"></div>
                         <div class="professor-details">
-                            <h3>Marcelo Walter</h3>
-                            <p>mwalter@inf.ufrgs.br</p>
-                            <div class="rating">
-                                ★★★★★
-                            </div>
+                            <h3>{{ professor.replace('_', ' ').title() }}</h3>
+                            <p>{{ professor }}@inf.ufrgs.br</p>
+                            <div class="rating">★★★★★</div>
                         </div>
                     </div>
-                    <div class="material-links">
-                        <button>LIVROS</button>
-                        <button>RESUMOS</button>
-                        <button>PROVAS</button>
-                        <button>LISTAS</button>
+                    
+                    <div class="material-lists">
+                        <!-- Livros -->
+                        <button class="collapsible">Livros</button>
+                        <div class="content">
+                            <ul>
+                                {% for livro in professor_materials["livros"] %}
+                                <li><a href="{{ livro.url }}">{{ livro.title }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+
+                        <!-- Resumos -->
+                        <button class="collapsible">Resumos</button>
+                        <div class="content">
+                            <ul>
+                                {% for resumo in professor_materials["resumos"] %}
+                                <li><a href="{{ resumo.url }}">{{ resumo.title }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+
+                        <!-- Provas -->
+                        <button class="collapsible">Provas</button>
+                        <div class="content">
+                            <ul>
+                                {% for prova in professor_materials["provas"] %}
+                                <li><a href="{{ prova.url }}">{{ prova.title }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+
+                        <!-- Listas -->
+                        <button class="collapsible">Listas</button>
+                        <div class="content">
+                            <ul>
+                                {% for lista in professor_materials["listas"] %}
+                                <li><a href="{{ lista.url }}">{{ lista.title }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
                     </div>
                 </div>
-
-                <div class="professor-card">
-                    <div class="professor-info">
-                        <div class="professor-avatar"></div>
-                        <div class="professor-details">
-                            <h3>Professor 2</h3>
-                            <p>Professor_2r@inf.ufrgs.br</p>
-                            <div class="rating">
-                                ★★
-                            </div>
-                        </div>
-                    </div>
-                    <div class="material-links">
-                        <button>LIVROS</button>
-                        <button>RESUMOS</button>
-                        <button>PROVAS</button>
-                        <button>LISTAS</button>
-                    </div>
-                </div>
-
-                <div class="professor-card">
-                    <div class="professor-info">
-                        <div class="professor-avatar"></div>
-                        <div class="professor-details">
-                            <h3>Professor 3</h3>
-                            <p>Professor_3r@inf.ufrgs.br</p>
-                            <div class="rating">
-                                ★★★★
-                            </div>
-                        </div>
-                    </div>
-                    <div class="material-links">
-                        <button>LIVROS</button>
-                        <button>RESUMOS</button>
-                        <button>PROVAS</button>
-                        <button>LISTAS</button>
-                    </div>
-                </div>                
+                {% endfor %}
             </div>
+
             <div class="add-material-form">
                 <h3>Adicionar Novo Material</h3>
                 <form action="/add_material" method="POST" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="material-type">Tipo de Material:</label>
                         <select id="material-type" name="material_type">
-                            <option value="livro">Livro</option>
-                            <option value="resumo">Resumo</option>
-                            <option value="prova">Prova</option>
-                            <option value="lista">Lista</option>
+                            <option value="livros">Livros</option>
+                            <option value="resumos">Resumos</option>
+                            <option value="provas">Provas</option>
+                            <option value="listas">Listas</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="professor">Professor:</label>
+                        <select id="professor" name="professor" required>
+                            <option value="marcelo_walter">Marcelo Walter</option>
+                            <option value="professor_2">Professor 2</option>
+                            <option value="professor_3">Professor 3</option>
+                            <!-- Adicione mais opções de professores aqui -->
                         </select>
                     </div>
             
@@ -418,19 +428,9 @@
                         <label for="material-file">Arquivo:</label>
                         <input type="file" id="material-file" name="material_file" required>
                     </div>
-            
                     <button type="submit">Adicionar Material</button>
                 </form>
-            </div>
-            <div class="material-list">
-                <h3>Materiais Disponíveis</h3>
-                <ul>
-                    {% for material in materials %}
-                    <li>{{ material.title }} - <a href="{{ material.url }}">Download</a></li>
-                    {% endfor %}
-                </ul>
-            </div>
-            
+            </div>            
         </div>
     </div>
 

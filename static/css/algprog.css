@@ -275,6 +275,62 @@ nav .menu li a:hover {
     flex-direction: column;
 }
 
+.collapsible {
+    background-color: #7f8c8d;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+.collapsible:after {
+    content: '\002B'; /* Plus sign */
+    font-size: 13px;
+    color: white;
+    float: right;
+    margin-left: 5px;
+}
+
+.collapsible.active:after {
+    content: "\2212"; /* Minus sign */
+}
+
+.content {
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: #f5f5f5;
+    border-left: 3px solid #7f8c8d;
+    border-right: 3px solid #7f8c8d;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+.content ul {
+    list-style-type: none;
+    padding: 10px;
+}
+
+.content ul li a {
+    text-decoration: none;
+    color: #7f8c8d;
+    padding: 5px 0;
+    display: block;
+    transition: color 0.3s ease;
+}
+
+.content ul li a:hover {
+    color: #595a5a;
+}
+
+
 .material-links button {
     background-color: #7f8c8d;
     color: #fff;
@@ -326,7 +382,7 @@ nav .menu li a:hover {
 }
 
 .add-material-form button {
-    background-color: #2980b9;
+    background-color: #7f8c8d;
     color: #fff;
     padding: 10px 15px;
     border: none;
@@ -338,7 +394,7 @@ nav .menu li a:hover {
 }
 
 .add-material-form button:hover {
-    background-color: #1f618d;
+    background-color: #4d5353;
 }
 
 
