@@ -66,6 +66,7 @@
                             </ul>
                         </div>
                     </li>
+                    <li>
                         <button class="collapsible">Etapa 4</button>
                         <div class="content">
                             <ul>
@@ -78,7 +79,7 @@
                             </ul>
                         </div>
                     </li>
-                    </li>
+                    <li>
                         <button class="collapsible">Etapa 5</button>
                         <div class="content">
                             <ul>
@@ -91,7 +92,7 @@
                             </ul>
                         </div>
                     </li>
-                    </li>
+                    <li>
                         <button class="collapsible">Etapa 6</button>
                         <div class="content">
                             <ul>
@@ -104,7 +105,7 @@
                             </ul>
                         </div>
                     </li>
-                    </li>
+                    <li>
                         <button class="collapsible">Etapa 7</button>
                         <div class="content">
                             <ul>
@@ -113,7 +114,7 @@
                             </ul>
                         </div>
                     </li>
-                    </li>
+                    <li>
                         <button class="collapsible">Sem Etapa</button>
                         <div class="content">
                             <ul>
@@ -338,12 +339,19 @@
             </nav>
 
             <div class="search-bar">
-                <input type="text" placeholder="Buscar...">
-                <button class="search-btn">🔍</button>
+                <input type="text" id="search-input" placeholder="Buscar...">
+                <button class="search-btn" id="search-btn">🔍</button>
                 <button class="filter-btn">FILTROS</button>
             </div>
             
             <div class="forum-container">
+                <!-- Barra de Busca e Filtros -->
+                <div class="search-bar">
+                    <input type="text" id="search-input" placeholder="Buscar...">
+                    <button class="search-btn" id="search-btn">🔍</button>
+                    <button class="filter-btn">FILTROS</button>
+                </div>
+                
                 <!-- Lista de Tópicos -->
                 <div class="topics-list">
                     <div class="topic-item">A prova de eng de software é muito difícil?!?</div>
@@ -357,14 +365,14 @@
                 
                 <!-- Caixa de Criação de Novo Tópico -->
                 <div class="new-topic-box">
-                    <input type="text" placeholder="Tópico...">
-                    <textarea placeholder="Digite seu texto..."></textarea>
-                    <button class="submit-btn">SUBMIT</button>
+                    <input type="text" id="new-topic-title" placeholder="Tópico...">
+                    <textarea id="new-topic-content" placeholder="Digite seu texto..."></textarea>
+                    <button class="submit-btn" id="submit-btn">SUBMIT</button>
                 </div>
             </div>
     
     
         </div>
-    <script src="{{ url_for('static', filename='js/home.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/forum.js') }}"></script>
 </body>
 </html>
