@@ -359,7 +359,7 @@
             <div class="content">
                 <ul>
                     {% for livro in professor_materials["livros"] %}
-                    <li><a href="{{ url_for('download_file', filename=livro['url']) }}">{{ livro['title'] }}</a></li>
+                    <li><a href="{{ url_for('download_file', filename=livro['url']) }}" target="_blank">{{ livro['title'] }}</a></li>
                     {% endfor %}
                 </ul>
             </div>
@@ -369,7 +369,7 @@
             <div class="content">
                 <ul>
                     {% for resumo in professor_materials["resumos"] %}
-                    <li><a href="{{ url_for('download_file', filename=resumo['url']) }}">{{ resumo['title'] }}</a></li>
+                    <li><a href="{{ url_for('download_file', filename=resumo['url']) }}" target="_blank">{{ resumo['title'] }}</a></li>
                     {% endfor %}
                 </ul>
             </div>
@@ -379,7 +379,7 @@
             <div class="content">
                 <ul>
                     {% for prova in professor_materials["provas"] %}
-                    <li><a href="{{ url_for('download_file', filename=prova['url']) }}">{{ prova['title'] }}</a></li>
+                    <li><a href="{{ url_for('download_file', filename=prova['url']) }}" target="_blank">{{ prova['title'] }}</a></li>
                     {% endfor %}
                 </ul>
             </div>
@@ -389,7 +389,7 @@
             <div class="content">
                 <ul>
                     {% for lista in professor_materials["listas"] %}
-                    <li><a href="{{ url_for('download_file', filename=lista['url']) }}">{{ lista['title'] }}</a></li>
+                    <li><a href="{{ url_for('download_file', filename=lista['url']) }}" target="_blank">{{ lista['title'] }}</a></li>
                     {% endfor %}
                 </ul>
             </div>
@@ -399,7 +399,7 @@
 
             </div>
 
-            <div class="add-material-form">
+            <div id = "add-material-form" class="add-material-form">
                 <h3>Adicionar Novo Material</h3>
                 <form action="/add_material" method="POST" enctype="multipart/form-data">
                     <div class="form-group">

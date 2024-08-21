@@ -33,6 +33,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Verificar se o usuário está logado
     const userNameElement = document.getElementById('user-name');
     const loginLink = document.getElementById('login-link');
+    const addMaterialForm = document.getElementById('add-material-form'); // Seleciona a div que será ocultada
 
     // Função para verificar o estado do login
     function checkLoginStatus() {
@@ -46,6 +47,7 @@ document.addEventListener("DOMContentLoaded", function() {
             // Se o usuário não estiver logado, mostrar o botão de login
             loginLink.style.display = 'block'; // Mostra o link de login
             userNameElement.textContent = ''; // Remove o nome do usuário
+            addMaterialForm.style.display = 'none';
         }
     }
 
