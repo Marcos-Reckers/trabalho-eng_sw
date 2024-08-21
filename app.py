@@ -59,7 +59,7 @@ def avaliacao_professor():
 
 @app.route('/algprog')
 def algprog():
-    professors = ["marcelo_walter", "professor_2"]
+    professors = ["marcelo_walter", "professor_2", "professor_3"]
     all_materials = {professor: get_materials_by_professor(professor) for professor in professors}
     return render_template('algprog.html', materials=all_materials)
 

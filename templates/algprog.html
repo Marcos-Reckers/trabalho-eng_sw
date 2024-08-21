@@ -356,7 +356,7 @@
                         <button class="collapsible">Livros</button>
                         <div class="content">
                             <ul>
-                                {% for livro in professor_materials["livro"] %}
+                                {% for livro in professor_materials["livros"] %}
                                 <li><a href="{{ livro.url }}">{{ livro.title }}</a></li>
                                 {% endfor %}
                             </ul>
@@ -402,10 +402,10 @@
                     <div class="form-group">
                         <label for="material-type">Tipo de Material:</label>
                         <select id="material-type" name="material_type">
-                            <option value="livro">Livro</option>
-                            <option value="resumo">Resumo</option>
-                            <option value="prova">Prova</option>
-                            <option value="lista">Lista</option>
+                            <option value="livros">Livros</option>
+                            <option value="resumos">Resumos</option>
+                            <option value="provas">Provas</option>
+                            <option value="listas">Listas</option>
                         </select>
                     </div>
 
