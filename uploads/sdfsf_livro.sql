@@ -1,1 +1,0 @@
-ALTER TABLE stop_transaction ADD COLUMN reason VARCHAR(255);
