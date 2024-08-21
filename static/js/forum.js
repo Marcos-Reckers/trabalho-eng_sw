@@ -94,6 +94,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 commentItem.textContent = comment;
                 commentsDisplay.appendChild(commentItem);
             });
+            checkLoginStatus();
         });
     }
 
@@ -197,6 +198,8 @@ document.addEventListener("DOMContentLoaded", function() {
      // Verificar se o usuário está logado
      const userNameElement = document.getElementById('user-name');
      const loginLink = document.getElementById('login-link');
+     const newTopicBox = document.getElementById('new-topic-box'); // Seleciona a div que será ocultada
+     const topicDisplay = document.getElementById('topic-display'); // Seleciona a div que será ocultada
  
      // Função para verificar o estado do login
      function checkLoginStatus() {
@@ -206,10 +209,14 @@ document.addEventListener("DOMContentLoaded", function() {
              // Se o usuário estiver logado, esconder o botão de login e mostrar o nome do usuário
              loginLink.style.display = 'none'; // Oculta o link de login
              userNameElement.textContent = `Bem-vindo, ${username}!`; // Exibe o nome do usuário
+
          } else {
              // Se o usuário não estiver logado, mostrar o botão de login
              loginLink.style.display = 'block'; // Mostra o link de login
              userNameElement.textContent = ''; // Remove o nome do usuário
+            // Esconder a div de criação de novo tópico
+            newTopicBox.style.display = 'none';
+            topicDisplay.style.display = 'none';
          }
      }
  
