@@ -344,7 +344,7 @@
                 <button class="filter-btn">FILTROS</button>
             </div>
             
-            <div class="forum-container">                
+            <div class="forum-container">            
                 <!-- Lista de Tópicos -->
                 <div class="topics-list">
                     <div class="topic-item">A prova de eng de software é muito difícil?!?</div>
@@ -356,6 +356,20 @@
                     <div class="topic-item">Tópico 7</div>
                 </div>
                 
+                <!-- Área de Exibição do Tópico Selecionado -->
+                <div class="topic-display">
+                    <h2 id="topic-title"></h2>
+                    <p id="topic-content"></p>
+                    <div class="comment-section">
+                        <h3>Respostas</h3>
+                        <textarea id="comment-content" placeholder="Responda ao tópico aqui..."></textarea>
+                        <button id="add-comment-btn">Responder</button>
+                    </div>
+                    <div class="comments-display" id="comments-display">
+                        <!-- Comentários serão adicionados aqui -->
+                    </div>
+                </div>
+
                 <!-- Caixa de Criação de Novo Tópico -->
                 <div class="new-topic-box">
                     <input type="text" id="new-topic-title" placeholder="Tópico...">
