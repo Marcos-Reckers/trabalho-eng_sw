@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A.C.E - Acervo Comunitário Estudantil</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/algprog.css') }}">
 </head>
 <body>
     <header>
@@ -13,8 +13,7 @@
         </div>
         <h1>A.C.E - Acervo Comunitário Estudantil</h1>
         <div class="login">
-            <a href="/login" id="login-link"><button> Login / Register </button></a>
-            <span id="user-name"></span>
+            <a href="/login" ><button> Login / Register </button></a>
         </div>
     </header>
     
@@ -67,7 +66,6 @@
                             </ul>
                         </div>
                     </li>
-                    <li>
                         <button class="collapsible">Etapa 4</button>
                         <div class="content">
                             <ul>
@@ -80,7 +78,7 @@
                             </ul>
                         </div>
                     </li>
-                    <li>
+                    </li>
                         <button class="collapsible">Etapa 5</button>
                         <div class="content">
                             <ul>
@@ -93,7 +91,7 @@
                             </ul>
                         </div>
                     </li>
-                    <li>
+                    </li>
                         <button class="collapsible">Etapa 6</button>
                         <div class="content">
                             <ul>
@@ -106,7 +104,7 @@
                             </ul>
                         </div>
                     </li>
-                    <li>
+                    </li>
                         <button class="collapsible">Etapa 7</button>
                         <div class="content">
                             <ul>
@@ -115,7 +113,7 @@
                             </ul>
                         </div>
                     </li>
-                    <li>
+                    </li>
                         <button class="collapsible">Sem Etapa</button>
                         <div class="content">
                             <ul>
@@ -327,7 +325,6 @@
             </div>
         </aside>
         
-        <!-- Coluna Central: Menu de navegação, conteúdo principal e chat -->
         <div class="coluna-central">
             <nav>
                 <ul class="menu">
@@ -337,38 +334,104 @@
                 </ul>
             </nav>
 
-            <div class="coluna-conteudo">
-                <!-- Notícias e Novas Postagens -->
-                <div class="conteudo-esquerda">
-                    <section class="recentes">
-                        <h2>ADICIONADOS RECENTEMENTE</h2>
-                        <p>Conteúdos recentes adicionados ao material disponível no site.</p>
-                    </section>
-                    
-                    <section class="noticias">
-                        <h2>NOTÍCIAS</h2>
-                        <p>Acompanhe as últimas notícias da UFRGS.</p>
-                    </section>
-                </div>
-
-                <!-- Chat -->
-                <div class="conteudo-direita">
-                    <div class="chat-container">
-                        <div class="chat-box">
-                            <div class="chat-content">
-                                <!-- Aqui será adicionado o conteúdo do chat -->
-                            </div>
-                            <div class="chat-input">
-                                <input type="text" placeholder="Escreva sua mensagem..." />
-                                <button>Enviar</button>
+            <div class="course-info">
+                <h2>INF01202 - ALGORÍTMOS E PROGRAMAÇÃO - CIC</h2>
+            </div>
+            
+            <div class="content-section">
+                <div class="professor-card">
+                    <div class="professor-info">
+                        <div class="professor-avatar"></div>
+                        <div class="professor-details">
+                            <h3>Marcelo Walter</h3>
+                            <p>mwalter@inf.ufrgs.br</p>
+                            <div class="rating">
+                                ★★★★★
                             </div>
                         </div>
                     </div>
+                    <div class="material-links">
+                        <button>LIVROS</button>
+                        <button>RESUMOS</button>
+                        <button>PROVAS</button>
+                        <button>LISTAS</button>
+                    </div>
                 </div>
-            </div>
-        </div>
 
-        <!-- Coluna da Direita removida -->
+                <div class="professor-card">
+                    <div class="professor-info">
+                        <div class="professor-avatar"></div>
+                        <div class="professor-details">
+                            <h3>Professor 2</h3>
+                            <p>Professor_2r@inf.ufrgs.br</p>
+                            <div class="rating">
+                                ★★
+                            </div>
+                        </div>
+                    </div>
+                    <div class="material-links">
+                        <button>LIVROS</button>
+                        <button>RESUMOS</button>
+                        <button>PROVAS</button>
+                        <button>LISTAS</button>
+                    </div>
+                </div>
+
+                <div class="professor-card">
+                    <div class="professor-info">
+                        <div class="professor-avatar"></div>
+                        <div class="professor-details">
+                            <h3>Professor 3</h3>
+                            <p>Professor_3r@inf.ufrgs.br</p>
+                            <div class="rating">
+                                ★★★★
+                            </div>
+                        </div>
+                    </div>
+                    <div class="material-links">
+                        <button>LIVROS</button>
+                        <button>RESUMOS</button>
+                        <button>PROVAS</button>
+                        <button>LISTAS</button>
+                    </div>
+                </div>                
+            </div>
+            <div class="add-material-form">
+                <h3>Adicionar Novo Material</h3>
+                <form action="/add_material" method="POST" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="material-type">Tipo de Material:</label>
+                        <select id="material-type" name="material_type">
+                            <option value="livro">Livro</option>
+                            <option value="resumo">Resumo</option>
+                            <option value="prova">Prova</option>
+                            <option value="lista">Lista</option>
+                        </select>
+                    </div>
+            
+                    <div class="form-group">
+                        <label for="material-title">Título:</label>
+                        <input type="text" id="material-title" name="material_title" required>
+                    </div>
+            
+                    <div class="form-group">
+                        <label for="material-file">Arquivo:</label>
+                        <input type="file" id="material-file" name="material_file" required>
+                    </div>
+            
+                    <button type="submit">Adicionar Material</button>
+                </form>
+            </div>
+            <div class="material-list">
+                <h3>Materiais Disponíveis</h3>
+                <ul>
+                    {% for material in materials %}
+                    <li>{{ material.title }} - <a href="{{ material.url }}">Download</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+            
+        </div>
     </div>
 
     <script src="{{ url_for('static', filename='js/home.js') }}"></script>
